@@ -31,8 +31,8 @@ trait InstallsApiStack
         );
 
         // Requests...
-        $files->ensureDirectoryExists(app_path('Http/Requests/Auth'));
-        $files->copyDirectory(__DIR__.'/../../stubs/api/app/Http/Requests/Auth', app_path('Http/Requests/Auth'));
+        $files->ensureDirectoryExists(app_path('Http/Requests'));
+        $files->copyDirectory(__DIR__.'/../../stubs/default/app/Http/Requests', app_path('Http/Requests'));
 
         // Providers...
         $files->copyDirectory(__DIR__.'/../../stubs/api/app/Providers', app_path('Providers'));

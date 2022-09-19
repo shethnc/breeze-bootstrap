@@ -29,8 +29,8 @@ trait InstallsBladeStack
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/app/Http/Controllers/Auth', app_path('Http/Controllers/Auth'));
 
         // Requests...
-        (new Filesystem)->ensureDirectoryExists(app_path('Http/Requests/Auth'));
-        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/app/Http/Requests/Auth', app_path('Http/Requests/Auth'));
+        (new Filesystem)->ensureDirectoryExists(app_path('Http/Requests'));
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/app/Http/Requests', app_path('Http/Requests'));
 
         // Views...
         (new Filesystem)->ensureDirectoryExists(resource_path('views/auth'));

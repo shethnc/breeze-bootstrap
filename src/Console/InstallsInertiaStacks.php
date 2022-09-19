@@ -35,10 +35,12 @@ trait InstallsInertiaStacks
         // Controllers...
         (new Filesystem)->ensureDirectoryExists(app_path('Http/Controllers/Auth'));
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-common/app/Http/Controllers/Auth', app_path('Http/Controllers/Auth'));
+        copy(__DIR__.'/../../stubs/inertia-common/app/Http/Controllers/ProfileController.php', app_path('Http/Controllers/ProfileController.php'));
 
         // Requests...
-        (new Filesystem)->ensureDirectoryExists(app_path('Http/Requests/Auth'));
-        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/app/Http/Requests/Auth', app_path('Http/Requests/Auth'));
+        (new Filesystem)->ensureDirectoryExists(app_path('Http/Requests'));
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/app/Http/Requests', app_path('Http/Requests'));
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-common/app/Http/Requests', app_path('Http/Requests'));
 
         // Middleware...
         $this->installMiddlewareAfter('SubstituteBindings::class', '\App\Http\Middleware\HandleInertiaRequests::class');
@@ -146,10 +148,12 @@ trait InstallsInertiaStacks
         // Controllers...
         (new Filesystem)->ensureDirectoryExists(app_path('Http/Controllers/Auth'));
         (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-common/app/Http/Controllers/Auth', app_path('Http/Controllers/Auth'));
+        copy(__DIR__.'/../../stubs/inertia-common/app/Http/Controllers/ProfileController.php', app_path('Http/Controllers/ProfileController.php'));
 
         // Requests...
-        (new Filesystem)->ensureDirectoryExists(app_path('Http/Requests/Auth'));
-        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/app/Http/Requests/Auth', app_path('Http/Requests/Auth'));
+        (new Filesystem)->ensureDirectoryExists(app_path('Http/Requests'));
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/app/Http/Requests', app_path('Http/Requests'));
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/inertia-common/app/Http/Requests', app_path('Http/Requests'));
 
         // Middleware...
         $this->installMiddlewareAfter('SubstituteBindings::class', '\App\Http\Middleware\HandleInertiaRequests::class');
