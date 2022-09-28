@@ -35,8 +35,8 @@ trait InstallsBootstrapStack
         (new Filesystem)->ensureDirectoryExists(resource_path('views/layouts'));
         
 
-        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/auth', resource_path('views/auth'));
-        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/default/resources/views/layouts', resource_path('views/layouts'));
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/bootstrap/resources/views/auth', resource_path('views/auth'));
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/bootstrap/resources/views/layouts', resource_path('views/layouts'));
         
 
         copy(__DIR__.'/../../stubs/bootstrap/resources/views/dashboard.blade.php', resource_path('views/dashboard.blade.php'));
