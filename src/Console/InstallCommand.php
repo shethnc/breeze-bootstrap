@@ -18,7 +18,7 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'breeze:install {stack=blade : The development stack that should be installed (blade,react,vue,api)}
+    protected $signature = 'breeze:install {stack=blade : The development stack that should be installed (blade,react,vue,api, bootstrap)}
                             {--inertia : Indicate that the Vue Inertia stack should be installed (Deprecated)}
                             {--pest : Indicate that Pest should be installed}
                             {--ssr : Indicates if Inertia SSR support should be installed}
@@ -46,9 +46,11 @@ class InstallCommand extends Command
             return $this->installApiStack();
         } elseif ($this->argument('stack') === 'blade') {
             return $this->installBladeStack();
+        } elseif ($this->argument('stack') === 'bootstrap') {
+            return $this->installBootstrapStack();
         }
 
-        $this->components->error('Invalid stack. Supported stacks are [blade], [react], [vue], and [api].');
+        $this->components->error('Invalid stack. Supported stacks are [blade], [react], [vue], [bootstrap] and [api].');
 
         return 1;
     }
